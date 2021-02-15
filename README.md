@@ -1,11 +1,12 @@
 # Telemetry
 Satellite's telemetry analysis using Python. 
 
-The code here developed is used to extract from a 
-TELEMETRY file the information concerning time, 
-orbit position and attitude from a given satellite.
+Binary file "telemetry.bin" contains all the telemetry
+information of a certain satellite. I will try to parse 
+all this information according to an EXCEL file which 
+describes how is the information stored on the binary file. 
 
-Datascience mechanisms are used to extract the data 
-in the FILE (binary file) and then this data is 
-exported to different STK files extensions. This files 
-could then be imported in a STK scenario for simulation. 
+Using DataScience mechanisms, I will parse and extract 
+the information regarding time, orbital position and 
+attitude. This information will then be stored in files 
+that can be imported to STK to perform scenario simulations. 
