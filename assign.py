@@ -1,8 +1,8 @@
 """
 
-    ICEYE TASK FOR THE OPERATOR POSITION
+    SATELLITE'S TELEMETRY ANALYSIS
     Description: The code here implemented is my personal work
-    trying to solve the assignment ICEYE provides me.
+    trying to analyse a satellite's telemetry file.
 
     This small script tries to find out all the telemetry data
     which is contained in a binary file, parse it, extract some of the
@@ -34,7 +34,7 @@ att_begin, att_end = 206, 222  # Attitude
 
 # Begin and end shows the byte in which the information we are looking for
 # begins and ends respectively inside a given block of information.
-# I understand that each block of information will correspond to a different
+# Each block of information (record) will correspond to a different
 # epoch
 
 
@@ -48,7 +48,7 @@ def parse_data(data, offset=0):
     return time, position_ECI, quaternions
 
 
-# I got a bit confused about big-endians and little-endians
+# Careful with big-endians and little-endians
 
 
 def num_blocks(data):
@@ -73,14 +73,7 @@ def get_offset(block_number):
 
 file = open('telemetry.bin', 'rb')
 tlm = file.read()
-# print(tlm.decode(encoding='ucs-2'))
 file.close()
-
-# I was able to upload the data as bytes, but I couldn't decode it.
-# I have tried every single encoding from
-# https://docs.python.org/3/library/codecs.html#codec-objects
-# Decoding this would allow a better understanding of what the file
-# contains
 
 time = []
 position = []
